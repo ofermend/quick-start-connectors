@@ -29,9 +29,16 @@ The Flask API will be bound to :code:`localhost:5000`.
   curl --request POST \
     --url http://localhost:5000/search \
     --header 'Content-Type: application/json' \
+    --header 'Authorization: Bearer <CONNECTOR_API_KEY>' \
     --data '{
-    "query": "BBQ"
-  }'
+      "query": "BBQ"
+    }'
 ```
 
 Alternatively, load up the Swagger UI and try out the API from a browser: http://localhost:5000/ui/
+
+For unit testing, please run:
+
+```bash
+  poetry run pytest
+```
